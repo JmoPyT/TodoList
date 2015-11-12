@@ -1,2 +1,6 @@
-job1:
-  script: sh test_gitlabci.sh
+before_script:
+  - sudo bundle install
+
+rspec:
+  script:
+    - sudo bundle exec rspec
