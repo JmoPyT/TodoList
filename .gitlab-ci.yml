@@ -1,5 +1,2 @@
 job1:
-  - echo "Test gitlab Ci"
-  
-job2:
   script: ./test_gitlabci.sh
