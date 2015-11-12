@@ -1,2 +1,2 @@
 job1:
-  script: ./test_gitlabci.sh
+  script: sh test_gitlabci.sh
