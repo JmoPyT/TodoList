@@ -1,0 +1,25 @@
+<div>	
+	<!-- flash: à mettre dans un fichier seul -->
+	<% if flash.key?("notice") %>
+		<p id="notice"><%= notice %></p>
+	<% end %>
+	<% if flash.key?("alert") %>
+		<p id="alert"><%= alert %></p>
+	<% end %>
+	<% if @items.length == 0 %>
+		Aucun item<br />
+		<%= link_to 'Créer un nouvel item', new_item_path %>
+	<% else %>
+		Mes items
+		<table border=1>
+			<% @items.each do |item| %>
+				<tr>
+					<td><%= item.id %></td>
+					<td><%= link_to item.titre,  item_path(item.id) %></td>
+					<td><%= link_to image_tag('edit.png', alt: "Modifier cet item", title: "Modifier cet item"), edit_item_path(item.id) %>
+					<td><%= link_to image_tag('delete.png', alt: "Supprimer cet item", title: "Supprimer cet item"), item_path(item.id), method: :delete, data: { confirm: "Are you sure?" } %>
+				</tr>
+			<% end %>
+		</table>
+	<% end %>
+</div>
