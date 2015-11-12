@@ -1,6 +1,6 @@
 before_script:
-  - sudo bundle install
+  - bundle install
 
 rspec:
   script:
-    - sudo bundle exec rspec
+    - bundle exec rspec
