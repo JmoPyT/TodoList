@@ -20,5 +20,6 @@
 	<%= f.text_area :contenu %><br />
 	<%= f.label :image %>
 	<%= f.file_field :image %><br />
+	<%= image_tag(@item.image, width: '50') %><br />
 	<%= f.submit "Modifier" %>
 <% end %>
