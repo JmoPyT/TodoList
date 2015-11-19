@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  
+
   root 'items#index' # root = index du site = page index des items
-  
+
   resources :items
 
 
