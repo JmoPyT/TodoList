@@ -1,33 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-  before(:each) do # exécuter avant chaque test = création d'une variable attr contenant les attributs titre et contenu
-    @attr = { 
-      :titre => "Exemple titre", 
-      :contenu => "Exemple de contenu"
-      }
+  # before(:each) do # executer avant chaque test = creation variable attr contenant les attributs titre et contenu
+    # @attr = {
+    #  titre: 'Exemple titre',
+    #  contenu: 'Exemple de contenu',
+    #  image: 'image.jpg'
+    # }
+  #  @attr = attributes_for(:item)
+  # end
+
+  it 'has a valid factory' do # verifie objet Item est bien cree
+    build(:item)
   end
-  
-  it "create new instance" do # vérifie que l'objet Item est bien créé
-    Item.create!(@attr)
-  end
-  
+
   describe "Attribute 'titre'" do
-    it "must be present and not empty" do
-      bad_item = Item.new(@attr.merge(:titre => "")) # création d'un objet Item avec un titre vide 
-      expect(bad_item).not_to be_valid # vérification que l'objet n'est pas valide
+    it 'is not valid if is empty' do
+      bad_item = build(:item, titre: '') # creation objet Item avec un titre vide
+      expect(bad_item).not_to be_valid # verification que objet pas valide
     end
-    
-    it "has maximum length of 25 characters" do
-      bad_item = Item.new(@attr.merge(:titre => "abcdefghijklmnopqrstuvwxyz0123456789")) # création d'un objet Item avec un titre très long
-      expect(bad_item).not_to be_valid # vérification que l'objet n'est pas valide
+
+    it 'is not valid if size > 25 characters' do
+      bad_item = build(:item, titre: 'abcdefghijklmnopqrstuvwxyz0123456789') # creation un objet Item avec un titre tres long
+      expect(bad_item).not_to be_valid # verification que objet pas valide
     end
   end
-  
+
   describe "Attribute 'contenu'" do
-    it "must be present and not empty" do
-      bad_item = Item.new(@attr.merge(:contenu => "")) # création d'un objet Item avec un contenu vide 
-      expect(bad_item).not_to be_valid # vérification que l'objet n'est pas valide
+    it 'is not valid if is empty' do
+      bad_item = build(:item, contenu: '') # creation objet Item avec un contenu vide
+      expect(bad_item).not_to be_valid # verification que objet pas valide
+    end
+  end
+
+  describe "Attribute 'image'" do
+    it 'is not valid if is empty' do
+      bad_item = build(:item, image: '') # creation objet Item avec une image vide
+      expect(bad_item).not_to be_valid # verification que objet pas valide
     end
   end
 end
