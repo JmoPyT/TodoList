@@ -27,9 +27,21 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# permalink
+gem 'friendly_id', '~> 5.1'
+
+# pagination
+gem 'will_paginate', '~> 3.0', '>= 3.0.7'
+
+gem 'nokogiri', '1.6.6.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  #gem 'byebug'
+  gem 'byebug'
+  gem 'rubocop', '~> 0.35.1' # analyse de la syntaxe du code
+  gem 'simplecov', '~> 0.10.0' # couverture de code
+  gem 'factory_girl_rails' # creation objet
+  gem 'faker', '~> 1.5' # faker: generate fake data
 end
 
 group :test do
