@@ -1,5 +1,8 @@
 <h3>Item <%= @item.id %></h3>
 <div><%= @item.titre %></div>
 <div><%= simple_format(@item.contenu) %></div>
-<div><%= image_tag(@item.image, width: '50%') %></div>
+<% unless @item.image.nil? %>
+	<div><%= image_tag(@item.image, width: '40%') %></div>
+<% end %>
+
 
