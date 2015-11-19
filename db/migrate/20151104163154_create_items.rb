@@ -1,3 +1,5 @@
+##
+# Migration DB: create table Item
 class CreateItems < ActiveRecord::Migration
   def change
     create_table :items do |t|
