@@ -23,7 +23,7 @@
 			<% @items.each do |item| %>
 				<tr>
 					<td><%= item.id %></td>
-					<td><%= link_to item.titre,  item_path(item.id) %></td>
+					<td><%= link_to item.titre,  item %></td>
 					<td><%= item.contenu %></td>
 					<td>
 						<% if item.image.nil? %>
@@ -33,9 +33,10 @@
 						<% end %>
 					</td>
 					<td><%= link_to image_tag('edit.png', alt: "Modifier cet item", title: "Modifier cet item"), edit_item_path(item.id) %>
-					<td><%= link_to image_tag('delete.png', alt: "Supprimer cet item", title: "Supprimer cet item"), item_path(item.id), method: :delete, data: { confirm: "Are you sure?" } %>
+					<td><%= link_to image_tag('delete.png', alt: "Supprimer cet item", title: "Supprimer cet item"), item_path(item.id), method: :delete, data: { confirm: "Voulez-vous vraiment supprimer cet item?" } %>
 				</tr>
 			<% end %>
 		</table>
+		<%= will_paginate @items %>
 	<% end %>
 </div>
