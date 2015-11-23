@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151117141848) do
+ActiveRecord::Schema.define(version: 20151123093955) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -29,10 +29,13 @@ ActiveRecord::Schema.define(version: 20151117141848) do
   create_table "items", force: :cascade do |t|
     t.string   "titre"
     t.text     "contenu"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "image"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "slug"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "items", ["slug"], name: "index_items_on_slug", unique: true
