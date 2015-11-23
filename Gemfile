@@ -36,11 +36,14 @@ gem 'will_paginate', '~> 3.0', '>= 3.0.7'
 # internationalisation
 gem 'i18n', '~> 0.7.0'
 
+# upload management
+gem 'paperclip', '~> 4.3', '>= 4.3.2'
+
 gem 'nokogiri', '1.6.6.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  # gem 'byebug'
+  gem 'byebug'
   gem 'rubocop', '~> 0.35.1' # analyse de la syntaxe du code
   gem 'simplecov', '~> 0.10.0' # couverture de code
   gem 'factory_girl_rails' # creation objet
