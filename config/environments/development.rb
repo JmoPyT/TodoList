@@ -37,5 +37,7 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   # Raises error for missing translations
-  # config.action_view.raise_on_missing_translations = true
+  config.action_view.raise_on_missing_translations = true # http://downey.io/blog/testing-i18n-ruby-on-rails-missing-translations/
+  
+  Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-6.9.2-Q16' # http://andystu.github.io/blog/2015/06/03/how-to-install-paperclip-for-rails-app-on-windows/
 end
