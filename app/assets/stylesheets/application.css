@@ -15,21 +15,21 @@
  */
 #alert
 {
-	color: #900;
+	color: #b00;
 	padding: 5px;
-	border: 1px solid #900;
+	border: 1px solid #b00;
 }
 
 #notice
 {
-	color: #009;
+	color: #0b0;
 	padding: 5px;
-	border: 1px solid #009;
+	border: 1px solid #0b0;
 }
 
 #success
 {
-	color: #090;
+	color: #0b0;
 	padding: 5px;
-	border: 1px solid #090;
+	border: 1px solid #0b0;
 }
