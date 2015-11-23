@@ -3,8 +3,17 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   root 'items#index' # root = index du site = page index des items
+  get '/:locale' => 'items#index'
 
-  resources :items
+  # scope permet de formatter url correctement
+  # http://localhost:3000/items/new?locale=fr
+  # devient
+  # http://localhost:3000/fr/items/new
+  # scope '/:locale' do
+  #scope '/:locale', locale: /fr|en/ do # force locale a fr ou en
+  scope '/:locale', locale: /#{I18n.available_locales.join("|")}/ do  
+    resources :items
+  end
 
 
   # Example of regular route:
