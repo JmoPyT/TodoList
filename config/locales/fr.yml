@@ -1,0 +1,17 @@
+fr:
+  hello: "Bonjour le monde"
+  home: "Accueil"
+  page_footer: "Pied de page"
+  page_header: "En-tête de la page"
+  
+  link:
+    create_item: "Créer un item"
+  
+  time:
+    formats:
+      short: "%d/%m/%Y %H:%M:%S"
+
+  will_paginate:
+    previous_label: "&#8592; Précédent"
+    next_label: "Suivant &#8594;"
+    page_gap: "&hellip;"

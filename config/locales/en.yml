@@ -21,3 +21,18 @@
 
 en:
   hello: "Hello world"
+  home: "Home"
+  page_footer: "Page's footer"
+  page_header: "Page's header"
+  
+  link:
+    create_item: "Create item"
+
+  time:
+    formats:
+      short: "%Y-%m-%d %H:%M:%S"
+  
+  will_paginate:
+    previous_label: "&#8592; Previous"
+    next_label: "Next &#8594;"
+    page_gap: "&hellip;"
