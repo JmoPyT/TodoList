@@ -1,38 +1,58 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
   home: "Home"
   page_footer: "Page's footer"
   page_header: "Page's header"
-  
+
+  alert:
+    delete_item: "ERROR deleting item !"
+
+  button:
+    add: "Add"
+
+  confirm:
+    delete_item: "Do you really want to delete this item ?"
+
+  h2:
+    add_item: "Add a new item"
+    add_user: "Add a new user"
+    show_item: "Item"
+    show_user: "User"
+
   link:
-    create_item: "Create item"
+    change_item: "Update this item"
+    create_item: "Create new item"
+    create_user: "Create new user"
+    delete_item: "Delete this item"
+
+  notice:
+    delete_item: "Item successfully deleted !"
+    update_item: "Item successfully updated !"
+
+  table:
+    th:
+      content_item: "Content"
+      id_item: "Id"
+      id_user: "Id"
+      image_item: "Image"
+      item_user: "Items"
+      mail_user: "Email"
+      name_user: "Name"
+      title_item: "Title"
+      user_item: "User"
 
   time:
     formats:
       short: "%Y-%m-%d %H:%M:%S"
-  
+
+  txt:
+    my_item: "My items"
+    my_user: "My users"
+    no_item: "No item"
+    no_user: "No registered user"
+
   will_paginate:
     previous_label: "&#8592; Previous"
     next_label: "Next &#8594;"
     page_gap: "&hellip;"
+

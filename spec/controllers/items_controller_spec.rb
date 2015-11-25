@@ -10,7 +10,7 @@ describe ItemsController, type: :controller do
 
   describe 'GET #new' do # verifie si la page items#new existe
     it 'return http status code 200' do
-      get :new
+      get :new, locale: 'fr'
       expect(response).to have_http_status(200)
     end
   end
@@ -18,7 +18,7 @@ describe ItemsController, type: :controller do
   describe 'GET #show:id' do # verifie si la page items#show:id existe
     it 'return http status code 200' do
       item = create(:item)
-      get :show, id: item
+      get :show, id: item, locale: 'fr'
       expect(response).to have_http_status(200)
     end
   end
@@ -26,7 +26,7 @@ describe ItemsController, type: :controller do
   describe 'GET #edit' do # verifie si la page items#edit:id existe
     it 'return http status code 200' do
       item = create(:item)
-      get :edit, id: item
+      get :edit, id: item, locale: 'fr'
       expect(response).to have_http_status(200)
     end
   end
@@ -34,20 +34,20 @@ describe ItemsController, type: :controller do
   describe 'POST #create' do
     context 'with valid attributes' do
       it 'create a new item' do
-        expect { post :create, item: attributes_for(:item) }.to change(Item, :count).by(1)
+        expect { post :create, item: attributes_for(:item), locale: 'fr' }.to change(Item, :count).by(1)
       end
       it 'redirect to root_path' do
-        post :create, item: attributes_for(:item)
+        post :create, item: attributes_for(:item), locale: 'fr'
         expect(response).to redirect_to(root_path)
       end
     end
 
     context 'with invalid attributes' do
       it 'not create a new item' do
-        expect { post :create, item: attributes_for(:item, titre: nil) }.to_not change(Item, :count)
+        expect { post :create, item: attributes_for(:item, titre: nil), locale: 'fr' }.to_not change(Item, :count)
       end
       it 're-render new' do
-        post :create, item: attributes_for(:item, contenu: nil)
+        post :create, item: attributes_for(:item, contenu: nil), locale: 'fr'
         expect(response).to render_template('new')
       end
     end
@@ -55,15 +55,15 @@ describe ItemsController, type: :controller do
 
   describe 'DELETE #destroy' do
     before :each do # runs the block one time before each of your specs in the file
-      @item = create(:item_db)
+      @item = create(:item)
     end
 
     it 'delete the item' do
-      expect { delete :destroy, id: @item }.to change(Item, :count).by(-1)
+      expect { delete :destroy, id: @item, locale: 'fr' }.to change(Item, :count).by(-1)
     end
 
     it 'redirect to root_path' do
-      delete :destroy, id: @item
+      delete :destroy, id: @item, locale: 'fr'
       expect(response).to redirect_to(root_path)
     end
   end
@@ -75,14 +75,14 @@ describe ItemsController, type: :controller do
 
     context 'with valid attributes' do
       it 'redirect to root_path' do
-        put :update, id: @item, item: attributes_for(:item)
+        put :update, id: @item, item: attributes_for(:item), locale: 'fr'
         expect(response).to redirect_to(root_path)
       end
     end
-    
+
     context 'with invalid attributes' do
       it 're-render edit' do
-        put :update, id: @item, item: attributes_for(:item, titre: nil)
+        put :update, id: @item, item: attributes_for(:item, titre: nil), locale: 'fr'
         expect(response).to render_template('edit')
       end
     end

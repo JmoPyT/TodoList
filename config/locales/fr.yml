@@ -3,13 +3,52 @@ fr:
   home: "Accueil"
   page_footer: "Pied de page"
   page_header: "En-tête de la page"
-  
+
+  alert:
+    delete_item: "ERREUR lors de la suppression de l'item !"
+
+  button:
+    add: "Ajouter"
+
+  confirm:
+    delete_item: "Voulez-vous supprimer cet item ?"
+
+  h2:
+    add_item: "Ajouter un nouvel item"
+    add_user: "Ajouter un nouvel utilisateur"
+    show_item: "Item"
+    show_user: "Utilisateur"
+
   link:
-    create_item: "Créer un item"
-  
+    change_item: "Modifier cet item"
+    create_item: "Créer un nouvel item"
+    create_user: "Créer un nouvel utilisateur"
+    delete_item: "Supprimer cet item"
+
+  notice:
+    delete_item: "Item supprimé avec succès !"
+    update_item: "Item modifié avec succès !"
+
+  table:
+    th:
+      content_item: "Contenu"
+      id_item: "Id"
+      id_user: "Id"
+      image_item: "Image"
+      item_user: "Items"
+      mail_user: "Email"
+      name_user: "Nom"
+      title_item: "Titre"
+      user_item: "Utilisateur"
   time:
     formats:
       short: "%d/%m/%Y %H:%M:%S"
+
+  txt:
+    my_item: "Mes items"
+    my_user: "Mes utilisateurs"
+    no_item: "Aucun item"
+    no_user: "Aucun utilisateur enregistré"
 
   will_paginate:
     previous_label: "&#8592; Précédent"
