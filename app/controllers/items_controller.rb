@@ -3,8 +3,8 @@
 class ItemsController < ApplicationController
   def index
     # @items = Item.all
-    @items = Item.paginate(:page => params[:page_item], :per_page => 3)
-    @users = User.paginate(:page => params[:page_user], :per_page => 5)
+    @items = Item.paginate(page: params[:page_item], per_page: 3)
+    @users = User.paginate(page: params[:page_user], per_page: 5)
     # Rails.logger.debug("items = #{@items.nil?}")
   end
 
@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     # Rails.logger.debug("items#DELETE = #{@item.inspect}")
-    #if File.exist?("public#{@item.image}") && FileUtils.rm("public#{@item.image}") && @item.destroy
+    # if File.exist?("public#{@item.image}") && FileUtils.rm("public#{@item.image}") && @item.destroy
     if @item.destroy
       # Rails.logger.debug("items#DELETE SUPPRESSION DE IMAGE")
       redirect_to root_path, flash: { notice: t('notice.delete_item') }
@@ -72,8 +72,8 @@ class ItemsController < ApplicationController
     # Rails.logger.debug("items#update params = #{params}")
     # Rails.logger.debug("items#update item_params = #{item_params}")
 
-    #@item.titre = "#{item_params[:titre]}"
-    #@item.contenu = "#{item_params[:contenu]}"
+    # @item.titre = "#{item_params[:titre]}"
+    # @item.contenu = "#{item_params[:contenu]}"
 
     # unless item_params[:image].nil?
     #  @item.image = "/items/#{item_params[:image].original_filename}"
@@ -84,8 +84,8 @@ class ItemsController < ApplicationController
     #  FileUtils.cp item_params[:image].tempfile, "public/items/#{item_params[:image].original_filename}"
     # end
 
-    if @item.update(item_params)
     # if @item.save
+    if @item.update(item_params)
       redirect_to root_path, flash: { notice: t('notice.update_item') }
     else
       render 'edit'
