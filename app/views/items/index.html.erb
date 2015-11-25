@@ -1,4 +1,4 @@
-<div>	
+<div>
 	<!-- flash: à mettre dans un fichier seul -->
 	<% if flash.key?("notice") %>
 		<p id="notice"><%= notice %></p>
@@ -8,16 +8,17 @@
 	<% end %>
 	<!-- <pre><%= session.inspect.to_yaml %></pre> -->
 	<% if @items.length == 0 %>
-		Aucun item<br />
-		<%= link_to 'Créer un nouvel item', new_item_path %>
+		<%= t('txt.no_item') %><br />
+		<%= link_to t('link.create_item'), new_item_path %>
 	<% else %>
-		Mes items (<%= @items.count %>)
+		<%= t('txt.my_item') %>&nbsp;(<%= @items.count %>)
 		<table border=1>
 			<tr>
-				<th>Id</th>
-				<th>Titre</th>
-				<th>Contenu</th>
-				<th>Image</th>
+				<th><%= t('table.th.id_item') %></th>
+				<th><%= t('table.th.title_item') %></th>
+				<th><%= t('table.th.content_item') %></th>
+				<th><%= t('table.th.image_item') %></th>
+				<th><%= t('table.th.user_item') %></th>
 				<th>&nbsp;</th>
 				<th>&nbsp;</th>
 			</tr>
@@ -26,15 +27,43 @@
 					<td><%= item.id %></td>
 					<td><%= link_to item.titre,  item %></td>
 					<td><%= item.contenu %></td>
-					<td>
-					   <%= image_tag(item.image.url(:thumb)) %>
-					   <%= image_tag(item.image.url(:crop)) %>
-					</td>
-					<td><%= link_to image_tag('edit.png', alt: "Modifier cet item", title: "Modifier cet item"), edit_item_path(item.id) %>
-					<td><%= link_to image_tag('delete.png', alt: "Supprimer cet item", title: "Supprimer cet item"), item_path(item.id), method: :delete, data: { confirm: "Voulez-vous vraiment supprimer cet item?" } %>
+					<td><%= image_tag(item.image.url(:thumb)) %></td>
+					<td><%= item.user.nom %></td>
+					<td><%= link_to image_tag('edit.png', alt: t('link.change_item'), title: t('link.change_item')), edit_item_path(item.id) %>
+					<td><%= link_to image_tag('delete.png', alt: t('link.delete_item'), title: t('link.delete_item')), item_path(item.id), method: :delete, data: { confirm: t('confirm.delete_item') } %>
 				</tr>
 			<% end %>
 		</table>
-		<%= will_paginate @items %>
+		<%= will_paginate @items, :param_name => 'page_item' %>
 	<% end %>
+    <br />
+	<% if @users.length == 0 %>
+        <%= t('txt.no_user') %><br />
+        <%= link_to t('link.create_user'), new_user_path %>
+    <% else %>
+        <%= t('txt.my_user') %>&nbsp;(<%= @users.count %>)
+        <table border=1>
+            <tr>
+                <th><%= t('table.th.id_user') %></th>
+                <th><%= t('table.th.name_user') %></th>
+                <th><%= t('table.th.mail_user') %></th>
+                <th><%= t('table.th.item_user') %></th>
+            </tr>
+            <% @users.each do |user| %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= link_to user.nom, user %></td>
+                    <td><%= user.email %></td>
+                    <td>
+                        <ul>
+                            <% user.items.each do |user_item| %>
+                                <li><%= user_item.titre %></li>
+                            <% end %>
+                        </ul>
+                    </td>
+                </tr>
+            <% end %>
+        </table>
+        <%= will_paginate @users, :param_name => 'page_user' %>
+    <% end %>
 </div>

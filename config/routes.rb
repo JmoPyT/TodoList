@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   #scope '/:locale', locale: /fr|en/ do # force locale a fr ou en
   scope '/:locale', locale: /#{I18n.available_locales.join("|")}/ do  
     resources :items
+    resources :users
   end
 
 

@@ -23,5 +23,9 @@
 	<% unless @item.image.nil? %>
 		<%= image_tag(@item.image, width: '50') %><br />
 	<% end %>
+    <%= f.select(:user_id) do %>
+        <%= options_from_collection_for_select(User.all, :id, :nom, selected: @item.user.id) %>
+    <% end %>
+    <br />
 	<%= f.submit "Modifier" %>
 <% end %>

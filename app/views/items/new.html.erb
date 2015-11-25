@@ -1,4 +1,4 @@
-<h2>Ajouter un item</h2>
+<h2><%= t('h2.add_item') %></h2>
 
 <% unless @item.errors.messages.nil? %>
 	<% @item.errors.messages.each do |key, val|  %>
@@ -20,5 +20,10 @@
 	<%= f.text_area :contenu %><br />
 	<%= f.label :image %>
 	<%= f.file_field :image %><br />
-	<%= f.submit "Ajouter" %>
+    <%= f.select(:user_id) do %>
+        <% @users.each do |user| %>
+            <%= content_tag(:option, user.nom, value: user.id) %>
+        <% end %>
+    <% end %><br />
+	<%= f.submit t('button.add') %>
 <% end %>

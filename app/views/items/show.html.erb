@@ -1,8 +1,7 @@
-<h3>Item <%= @item.id %></h3>
+<h2><%= t('h2.show_item') %> #<%= @item.id %></h2>
 <div><%= @item.titre %></div>
-<div><%= simple_format(@item.contenu) %></div>
+<div style='border: 1px solid #888; margin-bottom: 4px'><%= simple_format(@item.contenu) %></div>
 <% unless @item.image.nil? %>
-	<div><%= image_tag(@item.image, width: '40%') %></div>
+	<div><%= image_tag(@item.image.url(:medium)) %></div>
 <% end %>
-
-
+<div><%= @item.user.nom %></div>

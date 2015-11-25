@@ -1,10 +1,10 @@
 <header>
-    <%= "Params locale URL = #{params[:locale]} - Langue du site = #{I18n.locale}" %><br /><br />
+    <%= "Params locale URL = #{params[:locale]} - Langue du site = #{I18n.locale}" %><br />
     <%= link_to 'FR', '/fr' %> - <%= link_to 'EN', '/en' %>
     <hr />
 	<%= t('page_header') %><br />
 	<%= t('hello') %><br />
 	<%= l Time.now, format: :short %><br />
-	<%= link_to t('home'), "/#{I18n.locale}" %> - <%= link_to t('link.create_item'), new_item_path %>
+	<%= link_to t('home'), "/#{I18n.locale}" %> - <%= link_to t('link.create_item'), new_item_path %> - <%= link_to t('link.create_user'), new_user_path %>
 </header>
 <hr />
