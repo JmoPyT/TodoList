@@ -16,4 +16,8 @@
 !/log/.keep
 /tmp
 
+# Ignore public/system
 public/system
+
+# Ignore Gemfile.lock
+Gemfile.lock
