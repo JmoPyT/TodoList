@@ -48,6 +48,7 @@
                 <th><%= t('table.th.name_user') %></th>
                 <th><%= t('table.th.mail_user') %></th>
                 <th><%= t('table.th.item_user') %></th>
+                <th>&nbsp;</th>
             </tr>
             <% @users.each do |user| %>
                 <tr>
@@ -61,6 +62,7 @@
                             <% end %>
                         </ul>
                     </td>
+                    <td><%= link_to image_tag('delete.png', alt: t('link.delete_user'), title: t('link.delete_user')), user_path(user.id), method: :delete, data: { confirm: t('confirm.delete_user') } %>
                 </tr>
             <% end %>
         </table>

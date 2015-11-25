@@ -6,12 +6,14 @@ fr:
 
   alert:
     delete_item: "ERREUR lors de la suppression de l'item !"
+    delete_user: "ERREUR lors de la suppression de l'utilisateur !"
 
   button:
     add: "Ajouter"
 
   confirm:
     delete_item: "Voulez-vous supprimer cet item ?"
+    delete_user: "Voulez-vous supprimer cet utilisateur ?"
 
   h2:
     add_item: "Ajouter un nouvel item"
@@ -19,14 +21,26 @@ fr:
     show_item: "Item"
     show_user: "Utilisateur"
 
+  helpers:
+    label:
+        item:
+          contenu: "Contenu"
+          image: "Image"
+          titre: "Titre"
+        user:
+          nom: "Nom"
+          email: "E-mail"
+
   link:
     change_item: "Modifier cet item"
     create_item: "Créer un nouvel item"
     create_user: "Créer un nouvel utilisateur"
     delete_item: "Supprimer cet item"
+    delete_user: "Supprimer cet utilisateur"
 
   notice:
     delete_item: "Item supprimé avec succès !"
+    delete_user: "Utilisateur supprimé avec succès !"
     update_item: "Item modifié avec succès !"
 
   table:

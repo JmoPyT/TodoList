@@ -6,12 +6,14 @@ en:
 
   alert:
     delete_item: "ERROR deleting item !"
+    delete_user: "ERROR deleting user !"
 
   button:
     add: "Add"
 
   confirm:
     delete_item: "Do you really want to delete this item ?"
+    delete_user: "Do you really want to delete this user ?"
 
   h2:
     add_item: "Add a new item"
@@ -19,14 +21,26 @@ en:
     show_item: "Item"
     show_user: "User"
 
+  helpers:
+    label:
+        item:
+          contenu: "Content"
+          image: "Image"
+          titre: "Title"
+        user:
+          nom: "Name"
+          email: "Email"
+
   link:
     change_item: "Update this item"
     create_item: "Create new item"
     create_user: "Create new user"
     delete_item: "Delete this item"
+    delete_user: "Delete this user"
 
   notice:
     delete_item: "Item successfully deleted !"
+    delete_user: "User successfully deleted !"
     update_item: "Item successfully updated !"
 
   table:
