@@ -28,14 +28,14 @@ RSpec.describe Item, type: :model do
 
   describe "Attribute 'contenu'" do
     it 'is not valid if is empty' do
-      bad_item = build(:item, contenu: '') # creation objet Item avec un contenu vide
+      bad_item = build(:item, contenu: nil) # creation objet Item avec un contenu vide
       expect(bad_item).not_to be_valid # verification que objet pas valide
     end
   end
 
   describe "Attribute 'image'" do
     it 'is not valid if is empty' do
-      bad_item = build(:item, image: '') # creation objet Item avec une image vide
+      bad_item = build(:item, image: nil) # creation objet Item avec une image vide
       expect(bad_item).not_to be_valid # verification que objet pas valide
     end
   end
