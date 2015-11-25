@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :item do
     titre Faker::Lorem.word
-    contenu  Faker::Lorem.paragraph
-    image Rack::Test::UploadedFile.new(Rails.root.join("spec/fixtures/spongebob.jpg"), 'image/jpeg')
+    contenu Faker::Lorem.paragraph
+    image Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/spongebob.jpg'), 'image/jpeg')
     user # association
     # image { fixture_file_upload( 'spec/fixtures/spongebob.jpg', 'image/jpg') }
   end

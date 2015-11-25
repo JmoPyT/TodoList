@@ -29,7 +29,7 @@ RSpec.describe UsersController, type: :controller do
 
     context 'with invalid attributes' do
       it 'not create a new user' do
-        expect { post :create, user: attributes_for(:user, email: "test.email"), locale: 'fr' }.to_not change(User, :count)
+        expect { post :create, user: attributes_for(:user, email: 'test.email'), locale: 'fr' }.to_not change(User, :count)
       end
       it 're-render new' do
         post :create, user: attributes_for(:user, nom: nil), locale: 'fr'
@@ -38,5 +38,18 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe 'DELETE #destroy' do
+    before :each do # runs the block one time before each of your specs in the file
+      @user = create(:user)
+    end
 
+    it 'delete the user' do
+      expect { delete :destroy, id: @user, locale: 'fr' }.to change(User, :count).by(-1)
+    end
+
+    it 'redirect to root_path' do
+      delete :destroy, id: @user, locale: 'fr'
+      expect(response).to redirect_to(root_path)
+    end
+  end
 end

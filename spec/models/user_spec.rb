@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   it 'has a valid factory' do # verifie que objet User est bien cree
-    user = build(:user)
-    user_item = create(:user_with_items)
+    build(:user)
+    create(:user_with_items)
   end
 
   describe "Attribute 'nom'" do
