@@ -12,3 +12,5 @@ sudo bundle exec rspec -f h spec >> ~/${myFile}
 grep "Finished in" ~/${myFile} | sed s/"<[^>]*>"/""/g | awk -F"= " '{print substr($2,2,length($2)-3)}'
 grep "failures" ~/${myFile} | sed s/"<[^>]*>"/""/g | awk -F"= " '{print substr($2,2,length($2)-3)}'
 grep "Coverage" ~/${myFile}
+
+exit -1
