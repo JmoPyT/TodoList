@@ -18,6 +18,6 @@ class User < ActiveRecord::Base
 
   # validations
   validates :nom, presence: { message: 'nom obligatoire' }, length: { maximum: 20, message: 'nom trop long' }
-  validates :email, presence: { message: 'email obligatoire' }, uniqueness: true, email: true
+  # validates :email, presence: { message: 'email obligatoire' }, uniqueness: true, email: true
   # validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 end
