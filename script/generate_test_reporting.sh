@@ -6,4 +6,9 @@
 ########## PROCESS ##########
 # integration tests
 echo $(pwd)
-sudo bundle exec rspec -f h spec >> ~/todolist_test_$(date "+%F_%H-%M-%S").html
+myFile="todolist_test_$(date '+%F_%H-%M-%S').html"
+sudo bundle exec rspec -f h spec >> ~/${myFile}
+
+grep "Finished in" ~/${myFile}
+grep "failures" ~/${myFile}
+grep "Coverage" ~/${myFile}
