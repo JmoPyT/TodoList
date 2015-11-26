@@ -5,5 +5,5 @@
 
 ########## PROCESS ##########
 # integration tests
-rm -f ~/todolist_test_$(date "+%F_%X").html
-sudo bundle exec rspec -f h spec >> ~/todolist_test_$(date "+%F_%X").html
+sudo rm -f /home/jmpayet/todolist_test_$(date "+%F_%X").html
+sudo bundle exec rspec -f h spec >> /home/jmpayet/todolist_test_$(date "+%F_%X").html
