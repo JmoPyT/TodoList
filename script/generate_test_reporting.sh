@@ -9,6 +9,6 @@ echo $(pwd)
 myFile="todolist_test_$(date '+%F_%H-%M-%S').html"
 sudo bundle exec rspec -f h spec >> ~/${myFile}
 
-grep "Finished in" ~/${myFile}
-grep "failures" ~/${myFile}
+grep "Finished in" ~/${myFile} | sed s/"<[^>]*>"/""/g | awk -F"= " '{print substr($2,2,length($2)-3)}'
+grep "failures" ~/${myFile} | sed s/"<[^>]*>"/""/g | awk -F"= " '{print substr($2,2,length($2)-3)}'
 grep "Coverage" ~/${myFile}
