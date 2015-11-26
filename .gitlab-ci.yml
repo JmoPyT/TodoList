@@ -11,4 +11,3 @@ test_reporting:
   script:
     - chmod 755 script/generate_test_reporting.sh
     - ./script/generate_test_reporting.sh
-    - chown -R gitlab-runner:gitlab-runner *
