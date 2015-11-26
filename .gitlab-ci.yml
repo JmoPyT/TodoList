@@ -9,5 +9,5 @@ before_script:
 
 test_reporting:
   script:
-    sudo chmod 755 script/generate_test_reporting.sh
-    sudo ./script/generate_test_reporting.sh
+    chmod 755 script/generate_test_reporting.sh
+    ./script/generate_test_reporting.sh
