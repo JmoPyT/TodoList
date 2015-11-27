@@ -3,10 +3,6 @@ before_script:
   - rake db:create
   - rake db:migrate RAILS_ENV=test
 
-# rspec:
-#  script:
-#    - bundle exec rspec
-
 test_reporting:
   script:
     - chmod 755 script/generate_test_reporting.sh
