@@ -48,6 +48,7 @@ group :development, :test do
   gem 'simplecov', '~> 0.10.0' # couverture de code
   gem 'factory_girl_rails' # creation objet
   gem 'faker', '~> 1.5' # faker: generate fake data
+  gem 'rails_best_practices' #
 end
 
 group :test do

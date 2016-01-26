@@ -2,6 +2,7 @@
 # Model pour les items
 class Item < ActiveRecord::Base
   belongs_to :user
+  delegate :nom, to: :user, prefix: true # provides a delegate class method to easily expose contained objects' public methods as your own
 
   # ajout de la gem friendlyId pour generer les liens permanents
   extend FriendlyId

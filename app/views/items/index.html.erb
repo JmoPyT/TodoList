@@ -28,7 +28,7 @@
 					<td><%= link_to item.titre,  item %></td>
 					<td><%= item.contenu %></td>
 					<td><%= image_tag(item.image.url(:thumb)) %></td>
-					<td><%= item.user.nom %></td>
+					<td><%= item.user_nom %></td>
 					<td><%= link_to image_tag('edit.png', alt: t('link.change_item'), title: t('link.change_item')), edit_item_path(item.id) %>
 					<td><%= link_to image_tag('delete.png', alt: t('link.delete_item'), title: t('link.delete_item')), item_path(item.id), method: :delete, data: { confirm: t('confirm.delete_item') } %>
 				</tr>

@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   # http://localhost:3000/fr/items/new
   # scope '/:locale' do
   #scope '/:locale', locale: /fr|en/ do # force locale a fr ou en
-  scope '/:locale', locale: /#{I18n.available_locales.join("|")}/ do  
+  scope '/:locale', locale: /#{I18n.available_locales.join("|")}/ do
     resources :items
-    resources :users
+    resources :users, except: [:edit, :update, :index]
   end
 
 
